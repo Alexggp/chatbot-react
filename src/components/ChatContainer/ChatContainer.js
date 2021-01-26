@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import classes from './ChatContainer.module.css';
 import ChatHeader from './ChatHeader/ChatHeader';
 import ChatBody from './ChatBody/ChatBody';
 import ChatFooter from './ChatFooter/ChatFooter';
+
 class ChatContainer extends Component {
 
   state= {
@@ -25,14 +26,33 @@ class ChatContainer extends Component {
     ]
   }
 
+  addUserMessage = (text) => {
+    const newMsg = {
+      fromUser: true,
+      type: 'text',
+      payload: {
+        text: text
+      }
+    };
+    this.addNewMessage(newMsg);
+  }
+
+  addNewMessage = (newMsg) => {
+    const currentMsgs = [...this.state.messages];
+    currentMsgs.push(newMsg);
+    this.setState({
+      messages: currentMsgs
+    })
+  }
+
   render(){
 
-    const chatContainer =(
+    const chatContainer = (
 
         <div className={classes.ChatContainer}>
-         <ChatHeader click={this.props.closeChat}/>
+         <ChatHeader close={this.props.closeChat}/>
          <ChatBody messages={this.state.messages}/>
-         <ChatFooter />
+         <ChatFooter send={this.addUserMessage}/>
         </div>
     
     )

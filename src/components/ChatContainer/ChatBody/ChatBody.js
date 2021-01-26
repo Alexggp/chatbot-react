@@ -9,10 +9,14 @@ const ChatBody = (props) => {
   const msgElements = props.messages.map((msg, index)=>{
 
     const origin = msg.fromUser ? 'User' : 'Bot';
-    return <TextMessage key={index} origin={origin} payload={msg.payload} />
+    switch (msg.type){
+      case 'text':
+        return <TextMessage key={index} origin={origin} payload={msg.payload} />
+      default:
+        return <TextMessage key={index} origin='Bot' payload={{text:'Ha ocurrido un error'}} />;
+    }
 
-  })
-  console.log(msgElements)
+  });
 
   return (
     <div className={classes.ChatBody}>
