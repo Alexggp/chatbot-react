@@ -1,6 +1,6 @@
 import React from 'react';
 
-import widgetImage from '../../assets/images/widgetButton.svg';
+import widgetImage from '../../assets/images/widgetImg.svg';
 import classes from './WidgetButton.module.css';
 
 const widgetButton = (props) => {
