@@ -19,8 +19,8 @@ const ChatHeader = (props) => {
         <img src={closeImage} alt='Close'/>
       </div>
     </div>
-    )
-  }
+  )
+}
 
 
 

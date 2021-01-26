@@ -13,8 +13,8 @@ const ChatFooter = (props) => {
         <img src={sendImage} alt='Close'/>
       </div>
     </div>
-    )
-  }
+  )
+}
 
 
 

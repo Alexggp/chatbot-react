@@ -1,0 +1,15 @@
+.TextMessage{
+  width: auto;
+  box-sizing: border-box;
+  padding: 1em;
+  border-radius: 5px;
+  max-width: 350px;
+}
+
+.Bot-message{
+  background-color:lightblue;
+}
+.User-message{
+  background-color:lightslategray;
+  margin-left: 50px;
+}
