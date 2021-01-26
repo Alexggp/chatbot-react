@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './ChatHeader.module.css';
 import logoImage from '../../../assets/images/widgetImg.svg';
-import closeImage from '../../../assets/images/closeImg.svg';
+import closeImage from '../../../assets/images/closeIcon.svg';
 
 
 const ChatHeader = (props) => {

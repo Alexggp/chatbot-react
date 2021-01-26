@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 import classes from './ChatContainer.module.css';
 import ChatHeader from './ChatHeader/ChatHeader';
+import ChatBody from './ChatBody/ChatBody';
+import ChatFooter from './ChatFooter/ChatFooter';
 class ChatContainer extends Component {
 
   state= {
@@ -14,6 +16,8 @@ class ChatContainer extends Component {
 
         <div className={classes.ChatContainer}>
          <ChatHeader click={this.props.closeChat}/>
+         <ChatBody />
+         <ChatFooter />
         </div>
     
     )
