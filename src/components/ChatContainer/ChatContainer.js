@@ -25,6 +25,7 @@ class ChatContainer extends Component {
   }
 
   addUserMessage = (text) => {
+    if(!text) return;
     const newMsg = new TextMsg({fromUser: true, text: text});
     // addMessages gets ARRAY as parameter
     this.addMessages([newMsg]);
