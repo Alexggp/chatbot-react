@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import WidgetButton from './components/WidgetButton/WidgetButton';
 import ChatContainer from './components/ChatContainer/ChatContainer';
-import './App.css';
 
 class App extends Component {
 

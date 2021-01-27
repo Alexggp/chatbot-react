@@ -1,4 +1,3 @@
-
 class Msg {
   constructor(type, fromUser, payload){
     this.type= type;
@@ -7,9 +6,8 @@ class Msg {
   }
 }
 
-
 export class TextMsg extends Msg{
-  constructor(fromUser, text){
+  constructor({fromUser, text}){
     super();
     this.type= 'text';
     this.fromUser= fromUser;
