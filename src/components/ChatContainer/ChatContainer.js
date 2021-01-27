@@ -52,7 +52,7 @@ class ChatContainer extends Component {
 
         <div className={classes.ChatContainer}>
          <ChatHeader close={this.props.closeChat}/>
-         <ChatBody messages={this.state.messages}/>
+         <ChatBody messages={this.state.messages} sendMsg={this.sendUserMessage}/>
          <ChatFooter send={this.addUserMessage}/>
         </div>
     

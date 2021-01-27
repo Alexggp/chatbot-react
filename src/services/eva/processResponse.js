@@ -1,17 +1,36 @@
-import { TextMsg } from '../../components/chatElements/chatClasses';
+import { TextMsg, QuickReply, Button } from '../../components/chatElements/chatClasses';
 
 const processResponse = (rowData) => {
   const context = rowData.data.context;
+  const sessionCode = rowData.data.sessionCode;
   const dataAnswers = rowData.data.answers;
 
   const messages =  [];
 
-  for (let i=0; i < dataAnswers.length; i++){
-    const text = dataAnswers[i].content;
+  dataAnswers.forEach(answer=>{
+    const text = answer.content;
     const newMsg = new TextMsg({fromUser: false, text: text});
     messages.push(newMsg);
-  }
-  return {messages, context};
+
+    if (answer.quickReply.length){
+      const optionsArray = [];
+      answer.quickReply.forEach(option=>{
+        const newBtn = new Button({
+          title: option.name,
+          value: option.value,
+          action: null,
+          type: 'quick_reply'
+        });
+        optionsArray.push(newBtn);
+      })
+      const newQuickReply = new QuickReply({payload:optionsArray});
+      messages.push(newQuickReply);
+    }
+
+  });
+  return {messages, context, sessionCode};
+  
+   
 
 }
 

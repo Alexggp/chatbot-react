@@ -12,8 +12,7 @@ class App extends Component {
   toggleChatHandler = () =>{
     this.setState(prevState => (
       {chatIsOpen: !prevState.chatIsOpen}
-      )
-    )
+    ))
   }
 
   render(){

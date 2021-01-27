@@ -3,7 +3,7 @@ import axios from 'axios';
 import processResponse from './processResponse';
 
 export class EvaMsg{
-  constructor(text, code, context){
+  constructor({text, code, context}){
       this.text= text;
       this.code= code;
       this.context=context;
@@ -13,6 +13,7 @@ export class EvaMsg{
 class EvaConexion {
 
   context = {};
+  sessionCode = '';
 
   evaConfig = {
     url: 'https://api-eu-showrooms.eva.bot/conversations/',
@@ -30,21 +31,25 @@ class EvaConexion {
 
   sendInitialMessage = () =>{
     return new Promise((resolve, reject) => {
-      this.sendMessage('%EVA_WELCOME_MSG')
+      this.sendMessage(null, '%EVA_WELCOME_MSG')
       .then(response => resolve(response))
       .catch(err => reject(err));
     })
   }
     
-  sendMessage = (text)=>{
+  sendMessage = (text, code)=>{
     
     return new Promise ((resolve, reject) =>{
-      const initialMsg = new EvaMsg('', text, this.context);
-  
-      axios.post(this.evaConfig.url, initialMsg, {headers: this.evaConfig.headers})
+      const msg = new EvaMsg({
+        text: text || '',
+        code: code || '',
+        context: this.context
+      });
+      axios.post(`${this.evaConfig.url}/${this.sessionCode}`, msg, {headers: this.evaConfig.headers})
         .then(response => {
-          const {messages, newContext} = processResponse(response);
-          this.context = newContext;
+          const {messages, context, sessionCode} = processResponse(response);
+          this.context = context;
+          this.sessionCode = sessionCode;
           return resolve(messages);         
         })
         .catch(err => reject(err));
