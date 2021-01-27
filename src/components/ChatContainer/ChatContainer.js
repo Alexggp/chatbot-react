@@ -1,39 +1,21 @@
 import React, { Component } from 'react';
 
 import classes from './ChatContainer.module.css';
+import { TextMsg } from '../chatElements/chatClasses';
 import ChatHeader from './ChatHeader/ChatHeader';
 import ChatBody from './ChatBody/ChatBody';
 import ChatFooter from './ChatFooter/ChatFooter';
 
+
+
 class ChatContainer extends Component {
 
   state= {
-    messages:[
-      {
-        fromUser: false,
-        type: 'text',
-        payload: {
-          text: "Hola soy un bot" 
-        } 
-      },
-      {
-        fromUser: true,
-        type: 'text',
-        payload: {
-          text: "Hola me llamo alex" 
-        } 
-      }
-    ]
+    messages:[]
   }
 
   addUserMessage = (text) => {
-    const newMsg = {
-      fromUser: true,
-      type: 'text',
-      payload: {
-        text: text
-      }
-    };
+    const newMsg = new TextMsg(true, text);
     this.addNewMessage(newMsg);
   }
 
