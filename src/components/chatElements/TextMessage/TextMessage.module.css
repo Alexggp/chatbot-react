@@ -7,9 +7,9 @@
 }
 
 .Bot-message{
-  background-color:lightblue;
+  background-color:#FFF;
 }
 .User-message{
-  background-color:lightslategray;
-  margin-left: 50px;
+  background-color:#d3d3d3;
+  align-self: flex-end;
 }

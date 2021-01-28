@@ -31,7 +31,7 @@ class Button extends Component{
       <div 
         className={buttonClasses.join(' ')} 
         onClick={this.clickHandler}>
-          {this.props.title}
+        <span>{this.props.title}</span> 
       </div>
     )
   }

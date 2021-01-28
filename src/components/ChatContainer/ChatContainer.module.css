@@ -8,4 +8,6 @@
   width: 440px;
   height: 600px;
   box-shadow: black 0px 0px 16px -1px;
+  display: flex;
+  flex-direction: column;
 }
