@@ -11,3 +11,13 @@
   display: flex;
   flex-direction: column;
 }
+
+@media  (max-width: 600px){
+  .ChatContainer{
+    width: 100vw;
+    height: 100vh;
+    left:0;
+    top:0;
+    border-radius: 0%;
+  }
+}
