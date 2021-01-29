@@ -15,7 +15,6 @@ const ChatBody = (props) => {
 
     chatBodyDiv.current.scrollTop = chatBodyDiv.current.scrollHeight - chatBodyDiv.current.clientHeight;
 
-
   });
 
 

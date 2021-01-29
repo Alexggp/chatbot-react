@@ -13,6 +13,8 @@
   display: flex;
   align-items: center;
   line-height: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .ButtonClicked, .Button:hover{

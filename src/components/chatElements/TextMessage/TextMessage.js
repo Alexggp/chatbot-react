@@ -12,7 +12,7 @@ const TextMessage = (props) => {
 
   return (
     <div className={messageClasses.join(' ')}>
-      <span>{props.payload.text}</span>
+      <span dangerouslySetInnerHTML={{__html: props.payload.text}} />
     </div>
   )
 }
