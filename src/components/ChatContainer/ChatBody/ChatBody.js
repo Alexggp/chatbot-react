@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 import classes from './ChatBody.module.css';
+import Spinner from '../../chatElements/Spinner/Spinner';
 
 import TextMessage from '../../chatElements/TextMessage/TextMessage';
 import QuickReply from '../../chatElements/QuickReply/QuickReply';
@@ -36,6 +37,7 @@ const ChatBody = (props) => {
     <div className={classes.ChatBody} ref={chatBodyDiv}>
       <div className={classes.MessagesContainer}>
         {msgElements}
+        {props.showSpinner ? <Spinner/> : ''}
       </div>
     </div>
   )
