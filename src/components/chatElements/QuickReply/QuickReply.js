@@ -27,7 +27,7 @@ class QuickReply extends Component{
       classes[`${this.props.origin}-message`],
       classes.QuickReply
     ];
-    const options = this.props.buttons.map((btn, index)=>(
+    const options = this.props.payload.buttons.map((btn, index)=>(
       <Button 
         key={index}
         title= {btn.title}
