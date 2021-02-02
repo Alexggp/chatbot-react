@@ -36,7 +36,6 @@ class Carousel extends Component {
 
   scrollRightHandler = () =>{
     this.mouseDown = setInterval(()=>{
-      console.log(this.itemsContainerRef.current.scrollLeft,this.itemsContainerRef.current.scrollWidth)
       this.itemsContainerRef.current.scrollLeft = this.itemsContainerRef.current.scrollLeft + 5;
       if(this.itemsContainerRef.current.scrollLeft > 0) this.setState({showLeftArroy: true});
       if(this.itemsContainerRef.current.scrollLeft >= this.itemsContainerRef.current.scrollWidth-this.itemsContainerRef.current.clientWidth) {

@@ -13,8 +13,8 @@ class Button extends Component{
       this.setState(prevState=>({
         clicked: !prevState.clicked
       }));
-      if(this.value.action){
-        window.open(this.value.action, '_blank');
+      if(this.props.action){
+        window.open(this.props.action, '_blank');
       }
       this.props.click(this.props.value);
       
