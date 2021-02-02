@@ -9,8 +9,8 @@ import Carousel from '../../chatElements/Carousel/Carousel';
 
 const ChatBody = (props) => {
   const chatBodyDiv = useRef(null);
-  const selectionHandler = (text) => {
-    props.sendMsg(text);
+  const selectionHandler = (value) => {
+    props.sendMsg(value);
   }
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const ChatBody = (props) => {
 
   });
 
-  console.log(props.messages)
+  
   const msgElements = props.messages.map((msg, index)=>{
     const origin = msg.fromUser ? 'User' : 'Bot';
     switch (msg.type){

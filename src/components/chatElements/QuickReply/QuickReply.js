@@ -9,7 +9,7 @@ class QuickReply extends Component{
     disabled: false
   }
 
-  clickHandler = (value, action) => {
+  clickHandler = (value) => {
     if(!this.state.disabled){
 
       this.setState(prevState=>({

@@ -23,8 +23,7 @@ const Card = (props) =>{
         value={btn.value} 
         action={btn.action}
         type= {btn.type}
-        click= {clickHandler}
-        disabled={false} />
+        click= {clickHandler}/>
     ))
 
     return (
