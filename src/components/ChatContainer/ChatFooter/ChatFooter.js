@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
 import classes from './ChatFooter.module.css';
-import sendImage from '../../../assets/images/sendIcon.svg';
+import sendImage from '../../../assets/images/send-icon.svg';
 
 
 const ChatFooter = (props) => {
