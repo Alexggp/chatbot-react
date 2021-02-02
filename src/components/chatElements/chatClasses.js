@@ -27,10 +27,31 @@ export class Button {
 }
 
 export class QuickReply extends Msg{
-  constructor({payload}){
+  constructor({buttons}){
     super();   
     this.type= 'quick_reply';
+    this.payload= {
+      buttons: buttons
+    }
+  }
+}
+
+export class Carousel extends Msg{
+  constructor({payload}){
+    super();   
+    this.type= 'carousel';
     this.payload= payload
   }
 }
 
+export class Card extends Msg{
+  constructor({title, image, buttons}){
+    super();   
+    this.type= 'card';
+    this.payload= {
+      title: title,
+      image: image,
+      buttons: buttons
+    }
+  }
+}

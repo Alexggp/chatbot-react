@@ -13,7 +13,7 @@ const processResponse = (rowData) => {
     messages.push(newMsg);
 
     if (answer.quickReply.length){
-      const optionsArray = [];
+      const buttonsArray = [];
       answer.quickReply.forEach(option=>{
         const newBtn = new Button({
           title: option.name,
@@ -21,9 +21,9 @@ const processResponse = (rowData) => {
           action: null,
           type: 'quick_reply'
         });
-        optionsArray.push(newBtn);
+        buttonsArray.push(newBtn);
       })
-      const newQuickReply = new QuickReply({payload:optionsArray});
+      const newQuickReply = new QuickReply({buttons:buttonsArray});
       messages.push(newQuickReply);
     }
 
