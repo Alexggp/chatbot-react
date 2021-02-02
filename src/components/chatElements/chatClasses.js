@@ -55,3 +55,13 @@ export class Card extends Msg{
     }
   }
 }
+
+export class Image extends Msg{
+  constructor({image}){
+    super();   
+    this.type= 'card';
+    this.payload= {
+      image: image
+    }
+  }
+}

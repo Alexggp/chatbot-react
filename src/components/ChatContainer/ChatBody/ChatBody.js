@@ -7,6 +7,8 @@ import TextMessage from '../../chatElements/TextMessage/TextMessage';
 import QuickReply from '../../chatElements/QuickReply/QuickReply';
 import Carousel from '../../chatElements/Carousel/Carousel';
 import Card from '../../chatElements/Card/Card';
+import Image from '../../chatElements/Image/Image';
+
 
 
 const ChatBody = (props) => {
@@ -33,6 +35,8 @@ const ChatBody = (props) => {
         return <Carousel key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
       case 'card':
         return <Card key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
+      case 'image':
+        return <Image key={index} origin={origin} payload={msg.payload}/>
       default:
         return <TextMessage key={index} origin='Bot' payload={{text:'Ha ocurrido un error'}} />;
     }
