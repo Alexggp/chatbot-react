@@ -5,6 +5,7 @@ import Spinner from '../../chatElements/Spinner/Spinner';
 
 import TextMessage from '../../chatElements/TextMessage/TextMessage';
 import QuickReply from '../../chatElements/QuickReply/QuickReply';
+import Carousel from '../../chatElements/Carousel/Carousel';
 
 const ChatBody = (props) => {
   const chatBodyDiv = useRef(null);
@@ -18,15 +19,16 @@ const ChatBody = (props) => {
 
   });
 
-
+  console.log(props.messages)
   const msgElements = props.messages.map((msg, index)=>{
-
     const origin = msg.fromUser ? 'User' : 'Bot';
     switch (msg.type){
       case 'text':
         return <TextMessage key={index} origin={origin} payload={msg.payload} />
       case 'quick_reply':
         return <QuickReply key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
+      case 'carousel':
+        return <Carousel key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
       default:
         return <TextMessage key={index} origin='Bot' payload={{text:'Ha ocurrido un error'}} />;
     }

@@ -1,0 +1,12 @@
+.Carousel{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.Carousel > div{
+  margin-right: 10px;
+}
+.Carousel > div:last-of-type{
+  margin-right: unset;
+}
