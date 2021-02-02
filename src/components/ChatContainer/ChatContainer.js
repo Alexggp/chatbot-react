@@ -62,8 +62,19 @@ class ChatContainer extends Component {
             }]
           }
         }]
-    }
-    }],
+      } 
+    },{
+      type: 'card',
+      payload: {
+        title: 'Programación con Java Standard (7.ª edición)',
+        image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png",
+        buttons: [{
+          title: 'Más información',
+          value: 'Más información',
+          action: null,
+          type: null
+        }]
+      }}],
     showSpinner: false
   }
 

@@ -6,6 +6,8 @@ import Spinner from '../../chatElements/Spinner/Spinner';
 import TextMessage from '../../chatElements/TextMessage/TextMessage';
 import QuickReply from '../../chatElements/QuickReply/QuickReply';
 import Carousel from '../../chatElements/Carousel/Carousel';
+import Card from '../../chatElements/Card/Card';
+
 
 const ChatBody = (props) => {
   const chatBodyDiv = useRef(null);
@@ -29,6 +31,8 @@ const ChatBody = (props) => {
         return <QuickReply key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
       case 'carousel':
         return <Carousel key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
+      case 'card':
+        return <Card key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
       default:
         return <TextMessage key={index} origin='Bot' payload={{text:'Ha ocurrido un error'}} />;
     }
