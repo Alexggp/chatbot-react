@@ -24,7 +24,6 @@ class ChatContainer extends Component {
       type: 'carousel',
       fromUser: false,
       payload: {
-        type: 'card',
         items: [{
           type: 'card',
           payload: {
@@ -82,7 +81,22 @@ class ChatContainer extends Component {
           action: null,
           type: null
         }]
-      }}
+      }},
+      {
+        type: 'carousel',
+        fromUser: false,
+        payload: {
+          items: [{
+            
+              type: 'image',
+              fromUser: false,
+              payload: {
+                image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+              }
+
+          }]
+        }
+      }
     ],
     showSpinner: false
   }

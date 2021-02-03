@@ -23,25 +23,35 @@ const ChatBody = (props) => {
 
   });
 
-  
-  const msgElements = props.messages.map((msg, index)=>{
-    const origin = msg.fromUser ? 'User' : 'Bot';
-    switch (msg.type){
-      case 'text':
-        return <TextMessage key={index} origin={origin} payload={msg.payload} />
-      case 'quick_reply':
-        return <QuickReply key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
-      case 'carousel':
-        return <Carousel key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
-      case 'card':
-        return <Card key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
-      case 'image':
-        return <Image key={index} origin={origin} payload={msg.payload}/>
-      default:
-        return <TextMessage key={index} origin='Bot' payload={{text:'Ha ocurrido un error'}} />;
-    }
 
-  });
+  const processMsg = (messages)=>(
+    messages.map((msg, index)=>{
+      const origin = msg.fromUser ? 'User' : 'Bot';
+      switch (msg.type){
+        case 'text':
+          return <TextMessage key={index} origin={origin} payload={msg.payload} />
+        case 'quick_reply':
+          return <QuickReply key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
+        case 'carousel':
+          return (
+            <Carousel key={index} origin={origin}>
+             {processMsg(msg.payload.items)}
+            </Carousel>
+          )
+        case 'card':
+          return <Card key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
+        case 'image':
+          return <Image key={index} origin={origin} payload={msg.payload}/>
+        default:
+          return <TextMessage key={index} origin='Bot' payload={{text:'Ha ocurrido un error'}} />;
+      }
+  
+    })
+  )
+
+
+  
+  const msgElements = processMsg(props.messages);
 
   return (
     <div className={classes.ChatBody} ref={chatBodyDiv}>

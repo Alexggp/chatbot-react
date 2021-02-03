@@ -2,7 +2,6 @@ import React, { Component, createRef } from 'react';
 
 import classes from './Carousel.module.css';
 import arrowIcon from '../../../assets/images/arrow-icon.png';
-import Card from '../Card/Card';
 
 class Carousel extends Component {
 
@@ -13,12 +12,18 @@ class Carousel extends Component {
   
   state={
     showLeftArroy: false,
-    showRightArrow: true
+    showRightArrow: false
   }
 
   mouseDown= null;
-
   
+  componentDidMount(){
+    if (this.itemsContainerRef.current.scrollWidth>this.itemsContainerRef.current.clientWidth){
+      this.setState({showRightArrow: true})
+    }
+  }
+
+
   mouseUpHandler = () =>{
     clearInterval(this.mouseDown);
   }
@@ -52,15 +57,6 @@ class Carousel extends Component {
       classes.Carousel
     ];
 
-    const items = this.props.payload.items.map((item, index)=>(
-
-      <Card 
-        key={index} 
-        payload={item.payload}
-        selected = {this.props.selected} />
- 
-    ));
-
     const leftArrow = (
       <div 
         className={[classes.Arrow, classes.ArrowLeft].join(' ')}
@@ -83,7 +79,7 @@ class Carousel extends Component {
       <div className={messageClasses.join(' ')}>
         {this.state.showLeftArroy ? leftArrow : ''}
         <div className={classes.ItemsContainer} ref={this.itemsContainerRef} >
-          {items}
+          {this.props.children}
         </div>
         {this.state.showRightArrow ? rightArrow : ''}
       </div>

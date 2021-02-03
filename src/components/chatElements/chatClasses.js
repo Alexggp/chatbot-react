@@ -37,10 +37,12 @@ export class QuickReply extends Msg{
 }
 
 export class Carousel extends Msg{
-  constructor({payload}){
+  constructor({items}){
     super();   
     this.type= 'carousel';
-    this.payload= payload
+    this.payload= {
+      items: items
+    }
   }
 }
 

@@ -18,7 +18,7 @@
     height: 100vh;
     left:0;
     top:0;
-    border-radius: none;
+    border-radius: unset;
     box-shadow: none;
   }
 }
