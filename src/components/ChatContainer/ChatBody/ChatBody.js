@@ -24,7 +24,7 @@ const ChatBody = (props) => {
   });
 
 
-  const processMsg = (messages)=>(
+  const processMsgs = (messages)=>(
     messages.map((msg, index)=>{
       const origin = msg.fromUser ? 'User' : 'Bot';
       switch (msg.type){
@@ -35,7 +35,7 @@ const ChatBody = (props) => {
         case 'carousel':
           return (
             <Carousel key={index} origin={origin}>
-             {processMsg(msg.payload.items)}
+             {processMsgs(msg.payload.items)}
             </Carousel>
           )
         case 'card':
@@ -51,7 +51,7 @@ const ChatBody = (props) => {
 
 
   
-  const msgElements = processMsg(props.messages);
+  const msgElements = processMsgs(props.messages);
 
   return (
     <div className={classes.ChatBody} ref={chatBodyDiv}>

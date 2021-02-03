@@ -24,6 +24,7 @@ class Image extends Component {
 
     const fullSizeImage = (
         <Backdrop 
+          fullWindow={false}
           show={this.state.fullSize} 
           clicked={this.hideFullSize}>
             <img className={classes.FullSizeImage} src={this.props.payload.image} alt='' />
