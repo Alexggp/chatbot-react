@@ -94,7 +94,32 @@ class ChatContainer extends Component {
                 image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
               }
 
-          }]
+          },{
+            
+            type: 'image',
+            fromUser: false,
+            payload: {
+              image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+            }
+
+        },{
+            
+          type: 'image',
+          fromUser: false,
+          payload: {
+            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+          }
+
+      },
+      {
+            
+        type: 'image',
+        fromUser: false,
+        payload: {
+          image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+        }
+
+    }]
         }
       }
     ],

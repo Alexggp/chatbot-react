@@ -13,6 +13,7 @@
 
 .ItemsContainer > div{
   margin-right: 10px;
+  flex-shrink: 0;
 }
 .ItemContainer > div:last-of-type{
   margin-right: unset;
