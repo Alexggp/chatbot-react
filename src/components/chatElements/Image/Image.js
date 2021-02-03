@@ -1,17 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import classes from './Image.module.css';
+import Backdrop from '../../ChatContainer/Backdrop/Backdrop';
+
+class Image extends Component {
+
+  state = {
+    fullSize: false
+  }
 
 
-const Image = (props) => {
+  hideFullSize = () =>{
+    this.setState({fullSize: false})
+  }
+
+  
+  showFullSize = () =>{
+    this.setState({fullSize: true})
+  }
 
 
+  render(){
 
-  return (
-    <div className={classes.Image}>
-      <img src={props.payload.image} alt='' />
-    </div>
-  )
+    const fullSizeImage = (
+        <Backdrop 
+          show={this.state.fullSize} 
+          clicked={this.hideFullSize}>
+            <img className={classes.FullSizeImage} src={this.props.payload.image} alt='' />
+        </Backdrop>
+    )
+
+    return (
+      <React.Fragment>
+        <div className={classes.Image}>
+          <img 
+            src={this.props.payload.image} 
+            onClick = {this.showFullSize}
+            alt='' />
+        </div>
+        {fullSizeImage}
+      </React.Fragment>
+  
+    )
+  }
+
 }
 
 

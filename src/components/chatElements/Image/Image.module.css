@@ -11,3 +11,7 @@
   height: auto;
   cursor: pointer;
 }
+
+.FullSizeImage{
+  width:100%;
+}

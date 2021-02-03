@@ -1,6 +1,5 @@
 .Carousel{
   width: 100%;
-
   position: relative;
 }
 
@@ -62,4 +61,14 @@
   -webkit-transform: rotate(-90deg);
   /* Safari 3-8 */
   transform: rotate(-90deg);
+}
+
+
+@media (max-width: 600px) {
+  .Arrow{
+    display: none;
+  }
+  .ItemsContainer{
+    overflow-x: auto;
+  }
 }
