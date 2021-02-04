@@ -9,7 +9,7 @@ import Carousel from '../../chatElements/Carousel/Carousel';
 import Card from '../../chatElements/Card/Card';
 import Image from '../../chatElements/Image/Image';
 
-import CustomCard from '../../customComponents/CustomCard/CustomCard';
+import CustomCard from '../../customElements/CustomCard/CustomCard';
 
 
 const ChatBody = (props) => {
