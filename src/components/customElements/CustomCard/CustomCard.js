@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card from '../../chatElements/Card/Card'
+import Card from '../../chatElements/Card/Card';
 
 const CustomCard = (props) =>{
 

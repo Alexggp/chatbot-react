@@ -8,13 +8,17 @@
   height: 100px;
   overflow: hidden;
   display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 .Image img{
-  width: auto;
+  width: 100%;
   height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .Info{
