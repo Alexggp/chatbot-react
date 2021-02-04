@@ -9,6 +9,7 @@ import Carousel from '../../chatElements/Carousel/Carousel';
 import Card from '../../chatElements/Card/Card';
 import Image from '../../chatElements/Image/Image';
 
+import CustomCard from '../../customComponents/CustomCard/CustomCard';
 
 
 const ChatBody = (props) => {
@@ -42,6 +43,9 @@ const ChatBody = (props) => {
           return <Card key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
         case 'image':
           return <Image key={index} origin={origin} payload={msg.payload}/>
+
+        case 'custom_card':
+          return <CustomCard key={index} origin={origin} payload={msg.payload} selected={selectionHandler}/>
         default:
           return <TextMessage key={index} origin='Bot' payload={{text:'Ha ocurrido un error'}} />;
       }

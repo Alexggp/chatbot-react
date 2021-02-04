@@ -33,6 +33,7 @@ class Button extends Component{
     }
     return (
       <div 
+        style={this.props.style}
         className={buttonClasses.join(' ')} 
         onClick={this.clickHandler}>
         <span>{this.props.title}</span> 

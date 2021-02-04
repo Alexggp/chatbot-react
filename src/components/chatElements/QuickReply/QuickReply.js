@@ -35,11 +35,12 @@ class QuickReply extends Component{
         action={btn.action}
         type= {btn.type}
         click= {this.clickHandler}
+        style= {this.props.buttonStyle}
         disabled={this.state.disabled} />
     ))
 
     return (
-      <div className={messageClasses.join(' ')}>
+      <div className={messageClasses.join(' ')} style={this.props.style}>
         {options}
       </div>
     )

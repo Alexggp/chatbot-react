@@ -76,7 +76,7 @@ class Carousel extends Component {
     )
 
     return (
-      <div className={messageClasses.join(' ')}>
+      <div className={messageClasses.join(' ')} style={this.props.style}>
         {this.state.showLeftArroy ? leftArrow : ''}
         <div className={classes.ItemsContainer} ref={this.itemsContainerRef} >
           {this.props.children}

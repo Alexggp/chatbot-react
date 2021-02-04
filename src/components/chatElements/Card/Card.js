@@ -23,11 +23,12 @@ const Card = (props) =>{
         value={btn.value} 
         action={btn.action}
         type= {btn.type}
+        style= {props.buttonStyle}
         click= {clickHandler}/>
     ))
 
     return (
-      <div className={messageClasses.join(' ')}>
+      <div className={messageClasses.join(' ')} style={props.style}>
         <div className={classes.Image}>
           <img src={props.payload.image} alt={props.payload.title}/>
         </div>

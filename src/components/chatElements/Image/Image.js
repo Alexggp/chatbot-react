@@ -33,7 +33,7 @@ class Image extends Component {
 
     return (
       <React.Fragment>
-        <div className={classes.Image}>
+        <div className={classes.Image} style={this.props.style}>
           <img 
             src={this.props.payload.image} 
             onClick = {this.showFullSize}

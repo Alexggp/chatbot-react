@@ -4,7 +4,7 @@ const messages = [
     type: 'image',
     fromUser: false,
     payload: {
-      image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+      image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034"
     }
   },
   { // carousel
@@ -15,8 +15,8 @@ const messages = [
         {
           type: 'card',
           payload: {
-            title: 'Programación con Java Standard (7.ª edición)',
-            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png",
+            title: 'Titulo de la Card',
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034",
             buttons: [{
               title: 'Más información',
               value: 'Más información',
@@ -34,8 +34,8 @@ const messages = [
         {
           type: 'card',
           payload: {
-            title: 'Programación con Java Standard (7.ª edición)',
-            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png",
+            title: 'Titulo de la Card',
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034",
             buttons: [{
               title: 'Más información',
               value: 'Más información',
@@ -47,8 +47,8 @@ const messages = [
         {
           type: 'card',
           payload: {
-            title: 'Programación con Java Standard (7.ª edición)',
-            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png",
+            title: 'Titulo de la Card',
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034",
             buttons: [{
               title: 'Más información',
               value: 'Más información',
@@ -63,8 +63,8 @@ const messages = [
   { // single card
     type: 'card',
     payload: {
-      title: 'Programación con Java Standard (7.ª edición)',
-      image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png",
+      title: 'Titulo de la Card',
+      image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034",
       buttons: [{
         title: 'Más información',
         value: 'Más información',
@@ -82,31 +82,44 @@ const messages = [
           type: 'image',
           fromUser: false,
           payload: {
-            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034"
           }
         },
         {
           type: 'image',
           fromUser: false,
           payload: {
-            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034"
           }
         },
         {              
           type: 'image',
           fromUser: false,
           payload: {
-            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034"
           }
         },
         {     
           type: 'image',
           fromUser: false,
           payload: {
-            image: "https://s3-directus-orientador-fundacion-latam-pro.s3.amazonaws.com/public/uploads/_/originals/00000000149.png"
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034"
           }
         }
       ]
+    }
+  },
+  { // custom card
+    type: 'custom_card',
+    payload: {
+      title: 'Titulo de la Card',
+      image: "https://cdn.domestika.org/c_fill,dpr_auto,t_base_params.format_jpg/v1488904234/job-covers/000/047/908/47908-original.PNG?1488904234",
+      buttons: [{
+        title: 'Más información',
+        value: 'Más información',
+        action: null,
+        type: null
+      }]
     }
   }
 ]
