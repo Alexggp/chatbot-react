@@ -121,6 +121,54 @@ const messages = [
         type: null
       }]
     }
+  },
+  { // mixed carousel
+    type: 'carousel',
+    fromUser: false,
+    payload: {
+      items: [
+        { // single card
+          type: 'card',
+          payload: {
+            title: 'Titulo de la Card',
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034",
+            buttons: [{
+              title: 'Más información',
+              value: 'Más información',
+              action: null,
+              type: null
+            }]
+          }
+        },
+        {
+          type: 'image',
+          fromUser: false,
+          payload: {
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034"
+          }
+        },
+        { // custom card
+          type: 'custom_card',
+          payload: {
+            title: 'Titulo de la Card',
+            image: "https://cdn.domestika.org/c_fill,dpr_auto,t_base_params.format_jpg/v1488904234/job-covers/000/047/908/47908-original.PNG?1488904234",
+            buttons: [{
+              title: 'Más información',
+              value: 'Más información',
+              action: null,
+              type: null
+            }]
+          }
+        },
+        {     
+          type: 'image',
+          fromUser: false,
+          payload: {
+            image: "https://sonarplusd.com/system/attached_images/27595/medium/everis-logo-sic-2019.jpg?1556532034"
+          }
+        }
+      ]
+    }
   }
 ]
 
